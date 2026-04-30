@@ -1,5 +1,6 @@
 import { NotoSerifFont } from "@/app/layout";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const TileCard = ({ tile }) => {
@@ -18,7 +19,9 @@ const TileCard = ({ tile }) => {
         <p className="text-[12px] text-[#9E9B98]">{tile.material}</p>
         <h2 className={`${NotoSerifFont.className} card-title text-[#1E1E1E]`}>{tile.title}</h2>
         <div className="card-actions  mt-3">
+            <Link href={`/all-tiles/${tile.id}`} className="w-full">
           <button className="btn  border-[#1E1E1E] bg-transparent text-[#1E1E1E] w-full">See Details</button>
+            </Link>
         </div>
       </div>
     </div>

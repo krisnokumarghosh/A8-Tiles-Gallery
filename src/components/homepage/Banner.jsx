@@ -21,9 +21,11 @@ const Banner = () => {
           Curated textures and architectural forms for the modern space. Elevate
           your environment with our hand-selected tile collections.
         </p>
+         <Link href={"/all-tiles"}>
         <button className="btn bg-[#536257] text-white px-10 mt-6 py-6">
-            <Link href={"/"} >BROWS NOW</Link>
+           BROWS NOW
         </button>
+         </Link>
       </div>
       <div className="flex justify-end">
         <Image

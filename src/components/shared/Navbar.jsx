@@ -16,12 +16,12 @@ const Navbar = () => {
         tabIndex="-1"
         className="menu menu-sm dropdown-content space-y-3 bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
          <li>
-            <Navlink className="text-[#78716C] hover:bg-[#536257] hover:text-white" href={"/"}>
+            <Navlink href={"/"} className="text-[#78716C] hover:bg-[#536257] hover:text-white" >
               Home
             </Navlink>
           </li>
           <li>
-            <Navlink className="text-[#78716C] hover:bg-[#536257] hover:text-white" href={"/all-tiles"}>
+            <Navlink href={"/all-tiles"} className="text-[#78716C] hover:bg-[#536257] hover:text-white" >
               All Tiles
             </Navlink>
           </li>

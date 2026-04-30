@@ -2,7 +2,7 @@
   {
     "id": "tile_001",
     "title": "Ceramic Blue Tile",
-    "description": "Premium ceramic tile with blue glaze finish",
+    "description": "Premium ceramic tile with a rich blue glaze finish.Designed to enhance modern and classic interiors. Highly resistant to stains and moisture. Easy to clean and maintain over time. Ideal for kitchens, bathrooms, and living spaces. Provides a smooth and polished surface feel.",
     "image": "/images/tile10.png",
     "category": "ceramic",
     "price": 45.99,
@@ -14,7 +14,7 @@
   {
     "id": "tile_002",
     "title": "Marble White Tile",
-    "description": "Elegant white marble tile with natural veins",
+    "description": "Elegant white marble tile with natural vein patterns. Adds a luxurious and timeless appeal to any space. Polished surface reflects light beautifully. Durable and long-lasting material. Perfect for living rooms and premium interiors. Requires minimal maintenance for lasting shine.",
     "image": "/images/tile11.png",
     "category": "marble",
     "price": 89.50,
@@ -26,7 +26,7 @@
   {
     "id": "tile_003",
     "title": "Porcelain Grey Tile",
-    "description": "Durable porcelain tile with matte grey finish",
+    "description": "Durable porcelain tile with a matte grey finish. Offers a sleek and modern aesthetic. Highly resistant to scratches and wear. Suitable for high-traffic areas. Low water absorption ensures longevity. Perfect for both residential and commercial use.",
     "image": "/images/tile8.png",
     "category": "porcelain",
     "price": 55.00,
@@ -38,7 +38,7 @@
   {
     "id": "tile_004",
     "title": "Granite Black Tile",
-    "description": "Polished black granite tile for luxury interiors",
+    "description": "Polished black granite tile for a bold appearance. Extremely strong and highly durable material. Adds a luxurious touch to interiors. Resistant to heat and heavy impact. Ideal for floors and countertops. Maintains its shine for years.",
     "image": "/images/tile12.png",
     "category": "granite",
     "price": 75.25,
@@ -50,7 +50,7 @@
   {
     "id": "tile_005",
     "title": "Wood Finish Tile",
-    "description": "Wood-like ceramic tile for a natural look",
+    "description": "Ceramic tile with realistic wood texture. Brings a warm and natural look to interiors. More durable than real wood flooring. Resistant to moisture and termites. Perfect for bedrooms and living areas. Easy installation and low maintenance.",
     "image": "/images/tile7.png",
     "category": "ceramic",
     "price": 49.99,
@@ -62,7 +62,7 @@
   {
     "id": "tile_006",
     "title": "Mosaic Glass Tile",
-    "description": "Colorful mosaic glass tiles for decorative walls",
+    "description": "Colorful mosaic glass tiles for decorative walls. Creates vibrant and artistic patterns. Reflects light to brighten up spaces. Water-resistant and easy to clean. Ideal for backsplashes and bathrooms. Adds a unique design element to interiors.",
     "image": "/images/tile9.png",
     "category": "glass",
     "price": 65.75,
@@ -74,7 +74,7 @@
   {
     "id": "tile_007",
     "title": "Stone Texture Tile",
-    "description": "Natural stone texture porcelain tile",
+    "description": "Porcelain tile with natural stone texture. Offers a rugged and earthy appearance. Highly durable and long-lasting. Slip-resistant surface for safety. Suitable for indoor and outdoor use. Blends well with natural-themed designs.",
     "image": "/images/tile3.png",
     "category": "porcelain",
     "price": 58.40,
@@ -86,7 +86,7 @@
   {
     "id": "tile_008",
     "title": "Beige Matte Tile",
-    "description": "Soft beige matte tile for modern interiors",
+    "description": "Soft beige tile with a matte finish. Creates a calm and neutral ambiance. Ideal for minimalist interior designs. Non-slip surface ensures safety. Easy to clean and maintain. Suitable for floors and walls.",
     "image": "/images/tile5.png",
     "category": "ceramic",
     "price": 42.30,
@@ -98,7 +98,7 @@
   {
     "id": "tile_009",
     "title": "Hexagon Pattern Tile",
-    "description": "Stylish hexagon patterned floor tile",
+    "description": "Stylish hexagon-shaped tile design. Adds geometric appeal to spaces. Perfect for modern and creative interiors. Durable porcelain material. Easy to install in unique patterns. Great for floors and accent walls.",
     "image": "/images/tile4.png",
     "category": "designer",
     "price": 70.00,
@@ -110,7 +110,7 @@
   {
     "id": "tile_010",
     "title": "Glossy White Tile",
-    "description": "High-gloss white tile for a clean finish",
+    "description": "High-gloss white tile for a clean look. Reflects light to make spaces appear larger. Perfect for modern interiors. Smooth and shiny surface finish. Easy to clean and maintain. Ideal for kitchens and bathrooms.",
     "image": "/images/tile2.png",
     "category": "ceramic",
     "price": 39.99,
@@ -122,7 +122,7 @@
   {
     "id": "tile_011",
     "title": "Rustic Brown Tile",
-    "description": "Rustic brown tile with textured surface",
+    "description": "Rustic brown tile with textured finish. Adds a vintage and natural feel. Durable and suitable for heavy use. Slip-resistant surface. Ideal for outdoor and indoor spaces. Pairs well with wooden decor themes.",
     "image": "/images/tile6.png",
     "category": "porcelain",
     "price": 52.80,
@@ -134,7 +134,7 @@
   {
     "id": "tile_012",
     "title": "Onyx Luxury Tile",
-    "description": "Premium onyx tile with glossy finish",
+    "description": "Premium onyx tile with glossy finish. Features elegant natural patterns. Adds a luxurious touch to interiors. Smooth and polished surface. Best suited for premium spaces. Enhances overall aesthetic appeal.",
     "image": "/images/tile1.png",
     "category": "onyx",
     "price": 120.00,
