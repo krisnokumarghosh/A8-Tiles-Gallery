@@ -7,7 +7,7 @@ import Marquee from "react-fast-marquee";
 
 const Banner = () => {
   return (
-    <div className="mb-10">
+    <div className="mb-30">
     <div className=" lg:flex  space-y-10  lg:space-y-0 justify-between gap-10 bg-[#F4F3F2] p-10 md:p-30 rounded-md">
       <div>
         <h1
