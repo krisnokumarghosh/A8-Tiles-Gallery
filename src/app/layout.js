@@ -1,6 +1,7 @@
 import { Inter , Noto_Serif} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
+import Footer from "@/components/shared/Footer";
 
 const InterFont = Inter({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
         <main>
           {children}
         </main>
+        <Footer></Footer>
         </body>
     </html>
   );
