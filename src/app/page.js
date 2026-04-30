@@ -1,4 +1,5 @@
-import Banner from "@/components/shared/Banner";
+import Banner from "@/components/homepage/Banner";
+
 
 
 export default function Home() {
