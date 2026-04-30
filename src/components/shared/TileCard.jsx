@@ -1,25 +1,24 @@
+import { NotoSerifFont } from "@/app/layout";
 import Image from "next/image";
 import React from "react";
 
 const TileCard = ({ tile }) => {
   return (
-    <div className="card bg-base-100 w-96 shadow-sm">
+    <div className="card mt-8 lg:mt-0 bg-base-100 w-75 md:w-96 shadow border border-[#F4F3F2]">
       <figure>
        <Image
        alt="tile image"
        height={340}
        width={272}
        src={tile.image}
+       className="w-68 h-85 mt-5"
        ></Image>
       </figure>
-      <div className="card-body">
-        <h2 className="card-title">Card Title</h2>
-        <p>
-          A card component has a figure, a body part, and inside body there are
-          title and actions parts
-        </p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+      <div className="card-body px-9">
+        <p className="text-[12px] text-[#9E9B98]">{tile.material}</p>
+        <h2 className={`${NotoSerifFont.className} card-title text-[#1E1E1E]`}>{tile.title}</h2>
+        <div className="card-actions  mt-3">
+          <button className="btn  border-[#1E1E1E] bg-transparent text-[#1E1E1E] w-full">See Details</button>
         </div>
       </div>
     </div>
