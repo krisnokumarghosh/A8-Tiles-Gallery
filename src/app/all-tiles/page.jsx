@@ -1,25 +1,34 @@
-"use client"
+"use client";
 
 import React, { useEffect, useState } from "react";
-import { NotoSerifFont } from "../layout";
 import TileCard from "@/components/shared/TileCard";
 import { Input } from "@heroui/react";
 import { FaSearch } from "react-icons/fa";
+import { NotoSerifFont } from "@/lib/font";
 
-const AllTilesPage =  () => {
+const AllTilesPage = () => {
   const [tiles, setTiles] = useState([]);
-  
-  
-  useEffect(() => {
-      const fetchTiles = async () => {
-        const res = await fetch("https://a8-tiles-gallery.vercel.app/tiles.json");
-        const data = await res.json();
-        setTiles(data);
-      };
-      fetchTiles();
-    }, []);
 
-    
+  useEffect(() => {
+    const fetchTiles = async () => {
+      const res = await fetch("https://a8-tiles-gallery.vercel.app/tiles.json");
+      const data = await res.json();
+      setTiles(data);
+    };
+    fetchTiles();
+  }, []);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const searchData = e.target.search.value;
+
+    const filteredData = tiles.filter(
+      (item) => item.title.toLowerCase() === searchData.toLowerCase(),
+    );
+
+    setTiles(filteredData);
+  };
+
   return (
     <div className=" mt-12.5 mb-25">
       <h1
@@ -28,7 +37,10 @@ const AllTilesPage =  () => {
         The Gallery
       </h1>
 
-      <form className="max-w-175 px-5 md:px-0 mb-7  md:mb-20 mx-auto">
+      <form
+        onSubmit={handleSearch}
+        className="max-w-175 px-5 md:px-0 mb-7  md:mb-20 mx-auto"
+      >
         <div className="flex px-5 md:px-0  justify-center relative  ">
           <Input
             name="search"

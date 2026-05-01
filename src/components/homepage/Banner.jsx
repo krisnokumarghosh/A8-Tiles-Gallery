@@ -1,9 +1,9 @@
 import React from "react";
 import bannerImg from "@/assets/banner.png";
 import Image from "next/image";
-import { NotoSerifFont } from "@/app/layout";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
+import { NotoSerifFont } from "@/lib/font";
 
 const Banner = () => {
   return (

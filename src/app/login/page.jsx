@@ -1,7 +1,7 @@
 import React from "react";
-import { NotoSerifFont } from "../layout";
 import googleImg from "@/assets/google.png"
 import Image from "next/image";
+import { NotoSerifFont } from "@/lib/font";
 
 const page = () => {
   return (

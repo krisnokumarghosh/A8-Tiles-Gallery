@@ -1,4 +1,4 @@
-import { NotoSerifFont } from '@/app/layout';
+import { NotoSerifFont } from '@/lib/font';
 import React from 'react';
 
 const Footer = () => {

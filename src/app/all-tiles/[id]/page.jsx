@@ -1,5 +1,5 @@
-import { NotoSerifFont } from '@/app/layout';
 import { getTiles } from '@/lib/data';
+import { NotoSerifFont } from '@/lib/font';
 import Image from 'next/image';
 import React from 'react';
 

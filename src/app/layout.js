@@ -1,15 +1,8 @@
-import { Inter , Noto_Serif} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
+import { InterFont } from "@/lib/font";
 
-const InterFont = Inter({
-  subsets: ["latin"],
-});
-
-export const NotoSerifFont = Noto_Serif({
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Create Next App",

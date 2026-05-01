@@ -1,4 +1,4 @@
-import { NotoSerifFont } from "@/app/layout";
+import { NotoSerifFont } from "@/lib/font";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";

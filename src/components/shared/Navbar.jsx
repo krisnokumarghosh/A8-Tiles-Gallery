@@ -1,8 +1,8 @@
-import { NotoSerifFont } from "@/app/layout";
 import React from "react";
 import Navlink from "./Navlink";
 import Link from "next/link";
 import { CgProfile } from "react-icons/cg";
+import { NotoSerifFont } from "@/lib/font";
 
 const Navbar = () => {
   return (

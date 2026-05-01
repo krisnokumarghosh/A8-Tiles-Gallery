@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import consaltationImage from "@/assets/decore.jpg";
-import { NotoSerifFont } from "@/app/layout";
+import { NotoSerifFont } from "@/lib/font";
 
 const Consultation = () => {
   return (
