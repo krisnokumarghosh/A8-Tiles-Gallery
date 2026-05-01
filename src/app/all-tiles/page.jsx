@@ -21,7 +21,7 @@ const AllTilesPage = async () => {
           <Input
             name="search"
             aria-label="text"
-            className=" py-7 border rounded border-[#e8e4e1] w-full px-10"
+            className=" py-4 md:py-7 border rounded border-[#e8e4e1] w-full px-10"
             placeholder="Search tiles by title"
           />
           <button className="absolute top-5 right-10 cursor-pointer">
