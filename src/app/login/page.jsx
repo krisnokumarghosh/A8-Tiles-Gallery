@@ -2,6 +2,7 @@ import React from "react";
 import googleImg from "@/assets/google.png"
 import Image from "next/image";
 import { NotoSerifFont } from "@/lib/font";
+import Link from "next/link";
 
 const page = () => {
   return (
@@ -26,6 +27,7 @@ const page = () => {
           ></Image>
           <p>Login With Google</p>
           </button>
+          <p className="text-[#9E9B98] text-[14px] mt-10 text-center">Dont have an account?  <span className="text-[15px] text-[#1E1E1E] font-semibold"><Link href={"/register"}>Register</Link></span></p>
       </div>
     </div>
   );

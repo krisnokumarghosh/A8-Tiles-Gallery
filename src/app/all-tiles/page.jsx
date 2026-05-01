@@ -5,17 +5,17 @@ import TileCard from "@/components/shared/TileCard";
 import { Input } from "@heroui/react";
 import { FaSearch } from "react-icons/fa";
 import { NotoSerifFont } from "@/lib/font";
+import { getTiles } from "@/lib/data";
 
 const AllTilesPage = () => {
   const [tiles, setTiles] = useState([]);
 
   useEffect(() => {
-    const fetchTiles = async () => {
-      const res = await fetch("https://a8-tiles-gallery.vercel.app/tiles.json");
-      const data = await res.json();
+    const getTilesData = async () => {
+      const data = await getTiles();
       setTiles(data);
     };
-    fetchTiles();
+    getTilesData();
   }, []);
 
   const handleSearch = (e) => {
