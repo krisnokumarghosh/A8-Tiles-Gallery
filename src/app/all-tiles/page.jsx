@@ -1,13 +1,25 @@
-import React from "react";
+"use client"
+
+import React, { useEffect, useState } from "react";
 import { NotoSerifFont } from "../layout";
-import { getTiles } from "@/lib/data";
 import TileCard from "@/components/shared/TileCard";
 import { Input } from "@heroui/react";
 import { FaSearch } from "react-icons/fa";
 
-const AllTilesPage = async () => {
-  const tiles = await getTiles();
+const AllTilesPage =  () => {
+  const [tiles, setTiles] = useState([]);
+  
+  
+  useEffect(() => {
+      const fetchTiles = async () => {
+        const res = await fetch("https://a8-tiles-gallery.vercel.app/tiles.json");
+        const data = await res.json();
+        setTiles(data);
+      };
+      fetchTiles();
+    }, []);
 
+    
   return (
     <div className=" mt-12.5 mb-25">
       <h1
@@ -24,7 +36,7 @@ const AllTilesPage = async () => {
             className=" py-4 md:py-7 border rounded border-[#e8e4e1] w-full px-10"
             placeholder="Search tiles by title"
           />
-          <button className="absolute top-5 right-10 cursor-pointer">
+          <button className="absolute top-5 md:top-8 right-10 cursor-pointer">
             <FaSearch></FaSearch>
           </button>
         </div>
