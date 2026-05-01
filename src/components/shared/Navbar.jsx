@@ -57,7 +57,7 @@ const Navbar = () => {
 
       <div className="flex items-center gap-2 md:gap-5">
         <CgProfile className="text-2xl text-[#78716C]"/>
-        <Link href={"/"}><button className="btn px-5 md:px-7 rounded-full border-0 bg-[#536257] text-white">Login</button></Link>
+        <Link href={"/login"}><button className="btn px-5 md:px-7 rounded-full border-0 bg-[#536257] text-white">Login</button></Link>
       </div>
     </div>
   );
