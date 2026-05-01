@@ -38,7 +38,7 @@ const Banner = () => {
       </div>
     </div>
      <div className="bg-[#E6E2DF] p-6"> 
-            <Marquee>
+            <Marquee gradient={true} gradientColor="#E6E2DF">
                 <p className="text-[#1C1B1A]">NEW ARRIVALS: TERRA COTTA HAND-GLAZED | WEEKLY FEATURE: MODERN GEOMETRIC PATTERNS | JOIN THE COMMUNITY FOR EXCLUSIVE ACCESS | SUSTAINABLY SOURCED MATERIALS | NEW ARRIVALS: TERRA COTTA HAND-GLAZED | WEEKLY FEATURE: MODERN GEOMETRIC PATTERNS | JOIN THE COMMUNITY FOR EXCLUSIVE ACCESS | SUSTAINABLY SOURCED MATERIALS</p>
             </Marquee>
         </div>
