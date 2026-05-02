@@ -2,7 +2,7 @@ import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import { InterFont } from "@/lib/font";
-import { Toast } from "@heroui/react";
+import { Toaster } from "react-hot-toast";
 
 
 export const metadata = {
@@ -18,6 +18,7 @@ export default function RootLayout({ children }) {
       className={`${InterFont.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <Toaster position="top-right" />
         <Navbar></Navbar>
         <main>
           {children}

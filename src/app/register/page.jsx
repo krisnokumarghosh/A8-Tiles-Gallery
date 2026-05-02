@@ -6,8 +6,8 @@ import Image from "next/image";
 import { NotoSerifFont } from "@/lib/font";
 import { useForm } from "react-hook-form";
 import { authClient } from "@/lib/auth-client";
-import { Toast } from "@heroui/react";
 import { useRouter } from "next/navigation";
+import { errorToast, successToast } from "@/lib/toasts";
 
 const RegisterPage = () => {
   const router = useRouter();
@@ -18,34 +18,32 @@ const RegisterPage = () => {
   } = useForm();
 
   const handleRegister = async (iData) => {
-    console.log(iData);
     const { name, email, photoUrl, password } = iData;
 
     const { data, error } = await authClient.signUp.email({
-        name: name,
-        email: email,
-        image: photoUrl,
-        password: password,
-        callbackURL: "/",
+      name: name,
+      email: email,
+      image: photoUrl,
+      password: password,
+      callbackURL: "/",
     });
 
-    console.log(data, error);
-    
     if (error) {
-      alert(error.message);
+      errorToast(error.message);
     }
 
     if (data) {
-      alert("Registration Successfull");
-        router.push('/')
+      successToast("Registration Successfull");
+      router.push("/");
     }
   };
 
-
-   const handleGoogleRegister = async() => {
+  const handleGoogleRegister = async () => {
     const data = await authClient.signIn.social({
-    provider: "google",
-  });
+      provider: "google",
+    });
+
+    successToast("Registration Successfull");
   };
 
   return (
@@ -68,10 +66,11 @@ const RegisterPage = () => {
             placeholder="Enter Your Name"
             {...register("name", { required: "Required field can't be empty" })}
           ></input>
-           {
-              errors.name && <p className="mt-1 text-[12px] text-red-500">{errors.name.message}</p>
-            }
-
+          {errors.name && (
+            <p className="mt-1 text-[12px] text-red-500">
+              {errors.name.message}
+            </p>
+          )}
 
           <legend className="mt-10">Email</legend>
           <input
@@ -82,10 +81,11 @@ const RegisterPage = () => {
               required: "Required field can't be empty",
             })}
           ></input>
-           {
-              errors.email && <p className="mt-1 text-[12px] text-red-500">{errors.email.message}</p>
-            }
-
+          {errors.email && (
+            <p className="mt-1 text-[12px] text-red-500">
+              {errors.email.message}
+            </p>
+          )}
 
           <legend className="mt-10">Photo URL</legend>
           <input
@@ -96,10 +96,11 @@ const RegisterPage = () => {
               required: "Required field can't be empty",
             })}
           ></input>
-           {
-              errors.photoUrl && <p className="mt-1 text-[12px] text-red-500">{errors.photoUrl.message}</p>
-            }
-
+          {errors.photoUrl && (
+            <p className="mt-1 text-[12px] text-red-500">
+              {errors.photoUrl.message}
+            </p>
+          )}
 
           <legend className="mt-10">Password</legend>
           <input
@@ -110,10 +111,11 @@ const RegisterPage = () => {
               required: "Required field can't be empty",
             })}
           ></input>
-          {
-              errors.email && <p className="mt-1 text-[12px] text-red-500">{errors.email.message}</p>
-            }
-
+          {errors.email && (
+            <p className="mt-1 text-[12px] text-red-500">
+              {errors.email.message}
+            </p>
+          )}
 
           <button className="btn border-0 rounded-none bg-[#536257] text-white mt-10 w-full py-5">
             Register
@@ -122,7 +124,10 @@ const RegisterPage = () => {
         <div className="divider mt-10 text-[13px] text-[#9E9B98]">
           OR Continue With
         </div>
-        <button onClick={handleGoogleRegister} className="mt-10 flex items-center btn bg-transparent py-5 w-full text-[31A1C1C] border-[#9E9B98]">
+        <button
+          onClick={handleGoogleRegister}
+          className="mt-10 flex items-center btn bg-transparent py-5 w-full text-[31A1C1C] border-[#9E9B98]"
+        >
           <Image
             alt="google logo"
             height={16}

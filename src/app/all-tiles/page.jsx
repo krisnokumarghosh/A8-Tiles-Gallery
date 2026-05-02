@@ -9,11 +9,15 @@ import { getTiles } from "@/lib/data";
 
 const AllTilesPage = () => {
   const [tiles, setTiles] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getTilesData = async () => {
       const data = await getTiles();
-      setTiles(data);
+      setTimeout(() => {
+        setTiles(data);
+        setLoading(false);
+      }, 500);
     };
     getTilesData();
   }, []);
@@ -54,11 +58,17 @@ const AllTilesPage = () => {
         </div>
       </form>
 
-      <div className="grid md:grid-cols-2  lg:grid-cols-3 items-center justify-items-center">
-        {tiles.map((tile, ind) => {
-          return <TileCard key={ind} tile={tile}></TileCard>;
-        })}
-      </div>
+      {loading ? (
+        <div className=" flex my-10 md:my-50 justify-center items-center">
+          <span className="loading loading-spinner loading-md md:loading-xl"></span>
+        </div>
+      ) : (
+        <div className="grid md:grid-cols-2  lg:grid-cols-3 items-center justify-items-center">
+          {tiles.map((tile, ind) => {
+            return <TileCard key={ind} tile={tile}></TileCard>;
+          })}
+        </div>
+      )}
     </div>
   );
 };

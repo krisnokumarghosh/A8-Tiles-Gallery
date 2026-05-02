@@ -12,7 +12,6 @@ const Navbar = () => {
 
   const {data: session , isPending} = authClient.useSession();
   const user = session?.user;
-  console.log(user);
   
 
   return (
@@ -42,7 +41,9 @@ const Navbar = () => {
           </li>
       </ul>
     </div>
+    <Link href={"/"}>
         <h1 className="text-[#333333] font-bold md:text-[20px]">Tiles Gallery</h1>
+    </Link>
       </div>
 
       <div>
@@ -75,7 +76,7 @@ const Navbar = () => {
         alt="user image"
         height={35}
         width={35}
-        src={user?.image || <CgProfile/>}
+        src={user?.image || <CgProfile className="text-2xl text-[#78716C]"/>}
         className="rounded-full"
         ></Image>
         </Link>
@@ -84,7 +85,7 @@ const Navbar = () => {
         className="btn px-5 md:px-7 rounded-full border-0 bg-[#536257] text-white">Logout</button>
       </div>) : 
       ( <div className="flex items-center gap-2 md:gap-5">
-        <CgProfile className="text-2xl text-[#78716C]"/>
+        {/* <CgProfile className="text-2xl text-[#78716C]"/> */}
         <Link href={"/login"}><button className="btn px-5 md:px-7 rounded-full border-0 bg-[#536257] text-white">Login</button></Link>
       </div>)
      }

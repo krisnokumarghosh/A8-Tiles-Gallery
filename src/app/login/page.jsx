@@ -7,6 +7,7 @@ import { NotoSerifFont } from "@/lib/font";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 import { useForm } from "react-hook-form";
+import { errorToast, successToast } from "@/lib/toasts";
 
 const LoginPage = () => {
   const {
@@ -16,7 +17,6 @@ const LoginPage = () => {
   } = useForm();
 
   const handleLogin = async (iData) => {
-    console.log(iData);
     const { email, password } = iData;
 
     const { data, error } = await authClient.signIn.email({
@@ -26,23 +26,32 @@ const LoginPage = () => {
       callbackURL: "/",
     });
 
-    console.log(data, error);
-
     if (error) {
-      alert(error.message);
+      errorToast(error.message);
     }
 
     if (data) {
-      alert("Login Successfull");
+      successToast("Registration Successfull");
     }
   };
 
-
-  const handleGoogleLogin = async() => {
-      const data = await authClient.signIn.social({
+  const handleGoogleLogin = async () => {
+    const data = await authClient.signIn.social({
       provider: "google",
     });
-    };
+
+    toast.success("Login Successfull", {
+      style: {
+        borderLeft: "3px solid #536257",
+        padding: "12px 16px",
+        color: "#111827",
+      },
+      iconTheme: {
+        primary: "#536257",
+        secondary: "#fff",
+      },
+    });
+  };
 
   return (
     <div className="bg-[#FAF9F8] h-screen flex items-center ">
@@ -61,24 +70,26 @@ const LoginPage = () => {
               required: "Required field can't be empty",
             })}
           ></input>
-          {
-              errors.email && <p className="mt-1 text-[12px] text-red-500">{errors.email.message}</p>
-            }
-
+          {errors.email && (
+            <p className="mt-1 text-[12px] text-red-500">
+              {errors.email.message}
+            </p>
+          )}
 
           <legend className="mt-10">Password</legend>
           <input
             type="password"
             className="w-full border-b border-[#9E9B98]/60 mt-1 p-2 md:p-3.5"
             placeholder="..........."
-             {...register("password", {
+            {...register("password", {
               required: "Required field can't be empty",
             })}
           ></input>
-          {
-              errors.password && <p className="mt-1 text-[12px] text-red-500">{errors.password.message}</p>
-            }
-
+          {errors.password && (
+            <p className="mt-1 text-[12px] text-red-500">
+              {errors.password.message}
+            </p>
+          )}
 
           <button className="btn border-0 rounded-none bg-[#536257] text-white mt-10 w-full py-5">
             Login
@@ -87,7 +98,10 @@ const LoginPage = () => {
         <div className="divider mt-10 text-[13px] text-[#9E9B98]">
           OR Continue With
         </div>
-        <button onClick={handleGoogleLogin} className="mt-10 flex items-center btn bg-transparent py-5 w-full text-[31A1C1C] border-[#9E9B98]">
+        <button
+          onClick={handleGoogleLogin}
+          className="mt-10 flex items-center btn bg-transparent py-5 w-full text-[31A1C1C] border-[#9E9B98]"
+        >
           <Image
             alt="google logo"
             height={16}

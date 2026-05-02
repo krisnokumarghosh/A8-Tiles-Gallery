@@ -7,8 +7,8 @@ import { NotoSerifFont } from "@/lib/font";
 
 const Banner = () => {
   return (
-    <div className="mb-30">
-    <div className=" lg:flex  space-y-10  lg:space-y-0 justify-between gap-10 bg-[#F4F3F2] p-10 md:p-30 rounded-md">
+    <div className="mb-15 md:mb-30">
+    <div className=" lg:flex  space-y-10  lg:space-y-0 justify-between gap-10 bg-[#F4F3F2] p-9 md:p-30 rounded-md">
       <div>
         <h1
           className={`${NotoSerifFont.className} text-[#1E1E1E] font-bold text-[24px] md:text-[40px] md:leading-15`}
@@ -37,9 +37,9 @@ const Banner = () => {
         ></Image>
       </div>
     </div>
-     <div className="bg-[#E6E2DF] p-6"> 
-            <Marquee gradient={true} gradientColor="#E6E2DF">
-                <p className="text-[#1C1B1A]">NEW ARRIVALS: TERRA COTTA HAND-GLAZED | WEEKLY FEATURE: MODERN GEOMETRIC PATTERNS | JOIN THE COMMUNITY FOR EXCLUSIVE ACCESS | SUSTAINABLY SOURCED MATERIALS | NEW ARRIVALS: TERRA COTTA HAND-GLAZED | WEEKLY FEATURE: MODERN GEOMETRIC PATTERNS | JOIN THE COMMUNITY FOR EXCLUSIVE ACCESS | SUSTAINABLY SOURCED MATERIALS</p>
+     <div className="bg-[#E6E2DF] p-4 md:p-6"> 
+            <Marquee>
+                <p className="text-[#1C1B1A] text-[14px] md:text-[16px]">NEW ARRIVALS: TERRA COTTA HAND-GLAZED | WEEKLY FEATURE: MODERN GEOMETRIC PATTERNS | JOIN THE COMMUNITY FOR EXCLUSIVE ACCESS | SUSTAINABLY SOURCED MATERIALS | NEW ARRIVALS: TERRA COTTA HAND-GLAZED | WEEKLY FEATURE: MODERN GEOMETRIC PATTERNS | JOIN THE COMMUNITY FOR EXCLUSIVE ACCESS | SUSTAINABLY SOURCED MATERIALS</p>
             </Marquee>
         </div>
     </div>

@@ -5,7 +5,7 @@ import { NotoSerifFont } from "@/lib/font";
 
 const Consultation = () => {
   return (
-    <div className="mt-32  bg-[#F4F3F2]/30 p-10 md:p-25 lg:flex justify-center gap-20 text-center lg:text-left">
+    <div className=" md:mt-32  bg-[#F4F3F2]/30 p-10 md:p-25 lg:flex justify-center gap-20 text-center lg:text-left">
       <Image
         alt="decorated iamge"
         height={300}

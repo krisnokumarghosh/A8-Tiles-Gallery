@@ -1,7 +1,6 @@
 import Banner from "@/components/homepage/Banner";
 import Consultation from "@/components/homepage/Consultation";
 import FeaturedTiles from "@/components/homepage/FeaturedTiles";
-import { DiVim } from "react-icons/di";
 
 
 
