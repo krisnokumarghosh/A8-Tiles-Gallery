@@ -1,10 +1,20 @@
+"use client"
+
 import React from "react";
 import Navlink from "./Navlink";
 import Link from "next/link";
 import { CgProfile } from "react-icons/cg";
 import { NotoSerifFont } from "@/lib/font";
+import { authClient } from "@/lib/auth-client";
+import Image from "next/image";
 
 const Navbar = () => {
+
+  const {data: session , isPending} = authClient.useSession();
+  const user = session?.user;
+  console.log(user);
+  
+
   return (
     <div className={`${NotoSerifFont.className} py-6 flex items-center justify-between px-4 md:px-12 bg-[#F9F8F7]`}>
       <div className="flex md:gap-3 items-center">
@@ -55,10 +65,29 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <div className="flex items-center gap-2 md:gap-5">
+     {
+       isPending? 
+            <span className="loading loading-spinner loading-md md:loading-lg"></span> :
+      user? 
+      ( <div className="flex items-center gap-2 md:gap-5">
+        <Link href={"/my-profile"}>
+        <Image
+        alt="user image"
+        height={35}
+        width={35}
+        src={user?.image || <CgProfile/>}
+        className="rounded-full"
+        ></Image>
+        </Link>
+        <button 
+         onClick={async() => await authClient.signOut()}
+        className="btn px-5 md:px-7 rounded-full border-0 bg-[#536257] text-white">Logout</button>
+      </div>) : 
+      ( <div className="flex items-center gap-2 md:gap-5">
         <CgProfile className="text-2xl text-[#78716C]"/>
         <Link href={"/login"}><button className="btn px-5 md:px-7 rounded-full border-0 bg-[#536257] text-white">Login</button></Link>
-      </div>
+      </div>)
+     }
     </div>
   );
 };

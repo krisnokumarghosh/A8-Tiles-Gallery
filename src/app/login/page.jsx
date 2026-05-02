@@ -37,6 +37,13 @@ const LoginPage = () => {
     }
   };
 
+
+  const handleGoogleLogin = async() => {
+      const data = await authClient.signIn.social({
+      provider: "google",
+    });
+    };
+
   return (
     <div className="bg-[#FAF9F8] h-screen flex items-center ">
       <div className="bg-white shadow rounded-md w-127.75  mx-auto p-10 md:p-15.75">
@@ -80,7 +87,7 @@ const LoginPage = () => {
         <div className="divider mt-10 text-[13px] text-[#9E9B98]">
           OR Continue With
         </div>
-        <button className="mt-10 flex items-center btn bg-transparent py-5 w-full text-[31A1C1C] border-[#9E9B98]">
+        <button onClick={handleGoogleLogin} className="mt-10 flex items-center btn bg-transparent py-5 w-full text-[31A1C1C] border-[#9E9B98]">
           <Image
             alt="google logo"
             height={16}

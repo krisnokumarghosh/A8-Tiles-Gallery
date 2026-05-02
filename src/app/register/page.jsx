@@ -7,8 +7,10 @@ import { NotoSerifFont } from "@/lib/font";
 import { useForm } from "react-hook-form";
 import { authClient } from "@/lib/auth-client";
 import { Toast } from "@heroui/react";
+import { useRouter } from "next/navigation";
 
 const RegisterPage = () => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -35,7 +37,15 @@ const RegisterPage = () => {
 
     if (data) {
       alert("Registration Successfull");
+        router.push('/')
     }
+  };
+
+
+   const handleGoogleRegister = async() => {
+    const data = await authClient.signIn.social({
+    provider: "google",
+  });
   };
 
   return (
@@ -112,7 +122,7 @@ const RegisterPage = () => {
         <div className="divider mt-10 text-[13px] text-[#9E9B98]">
           OR Continue With
         </div>
-        <button className="mt-10 flex items-center btn bg-transparent py-5 w-full text-[31A1C1C] border-[#9E9B98]">
+        <button onClick={handleGoogleRegister} className="mt-10 flex items-center btn bg-transparent py-5 w-full text-[31A1C1C] border-[#9E9B98]">
           <Image
             alt="google logo"
             height={16}
