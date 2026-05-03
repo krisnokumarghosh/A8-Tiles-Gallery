@@ -63,7 +63,7 @@ const AllTilesPage = () => {
           <span className="loading loading-spinner loading-md md:loading-xl"></span>
         </div>
       ) : (
-        <div className="grid md:grid-cols-2  lg:grid-cols-3 items-center justify-items-center">
+        <div className="grid grid-cols-2  lg:grid-cols-3 items-center justify-items-center">
           {tiles.map((tile, ind) => {
             return <TileCard key={ind} tile={tile}></TileCard>;
           })}
