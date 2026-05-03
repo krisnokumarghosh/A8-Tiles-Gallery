@@ -12,7 +12,7 @@ const FeaturedTiles = async () => {
       >
         Featured Collections
       </h1>
-      <div className="mb-4">
+      <div className="mb-6">
         <TileCardSwiper tiles={tiles} />
       </div>
     </div>

@@ -111,7 +111,7 @@ const Navbar = () => {
                 height={35}
                 width={35}
                 src={user?.image}
-                className="rounded-full h-8.75 w-8.75 md:w-12 md:h-12"
+                className="rounded-full h-8.75 w-8.75 md:w-10 md:h-10"
               ></Image>
             ) : (
               <CgProfile className="text-2xl text-[#78716C]" />

@@ -12,7 +12,7 @@ const TileCard = ({ tile }) => {
        height={340}
        width={272}
        src={tile.image}
-       className="h-20 rounded-md md:rounded-none w-20.5 md:w-68 md:h-85 mt-2 md:mt-5"
+       className="h-22 rounded-md md:rounded-none w-25 md:w-68 md:h-85 mt-3 md:mt-5"
        ></Image>
       </figure>
       <div className="card-body gap-1 md:gap-2 md:px-9">

@@ -44,7 +44,7 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="bg-[#FAF9F8] ">
+    <div className="bg-[#FAF9F8] py-10 md:py-20">
       <div className="bg-white  shadow rounded-md md:w-127.75  mx-auto p-10 md:p-15.75">
         <p className="text-14px text-[#536257] text-center mb-4 font-semibold">
           JOIN OUR STUDIO

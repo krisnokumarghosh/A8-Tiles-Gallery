@@ -12,7 +12,7 @@ const TileCardSwiper = ({ tiles }) => {
       <div className="block md:hidden pb-8">
         <Swiper
           modules={[Pagination]}
-          slidesPerView={2.2}
+          slidesPerView={2.1}
           spaceBetween={12}
           pagination={{ clickable: true }}
           className="pb-6"
