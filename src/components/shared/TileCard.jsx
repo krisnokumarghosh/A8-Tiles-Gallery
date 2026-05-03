@@ -5,7 +5,7 @@ import React from "react";
 
 const TileCard = ({ tile }) => {
   return (
-    <div className="card mt-8  bg-base-100 w-25 md:w-96 shadow border border-[#F4F3F2]">
+    <div className="card mt-8  bg-base-100 w-32 md:w-96 shadow border border-[#F4F3F2]">
       <figure>
        <Image
        alt="tile image"
