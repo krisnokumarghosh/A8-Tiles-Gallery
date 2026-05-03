@@ -9,7 +9,8 @@
     "currency": "USD",
     "dimensions": "60x60 cm",
     "material": "Ceramic",
-    "inStock": true
+    "inStock": true,
+    "tags": ["Glossy", "Indoor"]
   },
   {
     "id": "tile_002",
@@ -17,11 +18,12 @@
     "description": "Elegant white marble tile with natural vein patterns. Adds a luxurious and timeless appeal to any space. Polished surface reflects light beautifully. Durable and long-lasting material. Perfect for living rooms and premium interiors. Requires minimal maintenance for lasting shine.",
     "image": "/images/tile11.png",
     "category": "marble",
-    "price": 89.50,
+    "price": 89.5,
     "currency": "USD",
     "dimensions": "80x80 cm",
     "material": "Marble",
-    "inStock": true
+    "inStock": true,
+    "tags": ["Luxury", "Classic"]
   },
   {
     "id": "tile_003",
@@ -29,11 +31,12 @@
     "description": "Durable porcelain tile with a matte grey finish. Offers a sleek and modern aesthetic. Highly resistant to scratches and wear. Suitable for high-traffic areas. Low water absorption ensures longevity. Perfect for both residential and commercial use.",
     "image": "/images/tile8.png",
     "category": "porcelain",
-    "price": 55.00,
+    "price": 55.0,
     "currency": "USD",
     "dimensions": "60x60 cm",
     "material": "Porcelain",
-    "inStock": false
+    "inStock": false,
+    "tags": ["Modern", "Durable"]
   },
   {
     "id": "tile_004",
@@ -45,7 +48,8 @@
     "currency": "USD",
     "dimensions": "60x120 cm",
     "material": "Granite",
-    "inStock": true
+    "inStock": true,
+    "tags": ["Bold", "Luxury"]
   },
   {
     "id": "tile_005",
@@ -57,7 +61,8 @@
     "currency": "USD",
     "dimensions": "20x120 cm",
     "material": "Ceramic",
-    "inStock": true
+    "inStock": true,
+    "tags": ["Natural", "Warm"]
   },
   {
     "id": "tile_006",
@@ -69,7 +74,8 @@
     "currency": "USD",
     "dimensions": "30x30 cm",
     "material": "Glass",
-    "inStock": false
+    "inStock": false,
+    "tags": ["Glossy", "Artistic"]
   },
   {
     "id": "tile_007",
@@ -77,11 +83,12 @@
     "description": "Porcelain tile with natural stone texture. Offers a rugged and earthy appearance. Highly durable and long-lasting. Slip-resistant surface for safety. Suitable for indoor and outdoor use. Blends well with natural-themed designs.",
     "image": "/images/tile3.png",
     "category": "porcelain",
-    "price": 58.40,
+    "price": 58.4,
     "currency": "USD",
     "dimensions": "60x60 cm",
     "material": "Porcelain",
-    "inStock": true
+    "inStock": true,
+    "tags": ["Stone", "Natural"]
   },
   {
     "id": "tile_008",
@@ -89,11 +96,12 @@
     "description": "Soft beige tile with a matte finish. Creates a calm and neutral ambiance. Ideal for minimalist interior designs. Non-slip surface ensures safety. Easy to clean and maintain. Suitable for floors and walls.",
     "image": "/images/tile5.png",
     "category": "ceramic",
-    "price": 42.30,
+    "price": 42.3,
     "currency": "USD",
     "dimensions": "60x60 cm",
     "material": "Ceramic",
-    "inStock": true
+    "inStock": true,
+    "tags": ["Matte", "Neutral"]
   },
   {
     "id": "tile_009",
@@ -101,11 +109,12 @@
     "description": "Stylish hexagon-shaped tile design. Adds geometric appeal to spaces. Perfect for modern and creative interiors. Durable porcelain material. Easy to install in unique patterns. Great for floors and accent walls.",
     "image": "/images/tile4.png",
     "category": "designer",
-    "price": 70.00,
+    "price": 70.0,
     "currency": "USD",
     "dimensions": "50x50 cm",
     "material": "Porcelain",
-    "inStock": false
+    "inStock": false,
+    "tags": ["Hexagon", "Modern"]
   },
   {
     "id": "tile_010",
@@ -117,7 +126,8 @@
     "currency": "USD",
     "dimensions": "60x60 cm",
     "material": "Ceramic",
-    "inStock": true
+    "inStock": true,
+    "tags": ["Glossy", "Modern"]
   },
   {
     "id": "tile_011",
@@ -125,11 +135,12 @@
     "description": "Rustic brown tile with textured finish. Adds a vintage and natural feel. Durable and suitable for heavy use. Slip-resistant surface. Ideal for outdoor and indoor spaces. Pairs well with wooden decor themes.",
     "image": "/images/tile6.png",
     "category": "porcelain",
-    "price": 52.80,
+    "price": 52.8,
     "currency": "USD",
     "dimensions": "60x60 cm",
     "material": "Porcelain",
-    "inStock": true
+    "inStock": true,
+    "tags": ["Rustic", "Vintage"]
   },
   {
     "id": "tile_012",
@@ -137,10 +148,11 @@
     "description": "Premium onyx tile with glossy finish. Features elegant natural patterns. Adds a luxurious touch to interiors. Smooth and polished surface. Best suited for premium spaces. Enhances overall aesthetic appeal.",
     "image": "/images/tile1.png",
     "category": "onyx",
-    "price": 120.00,
+    "price": 120.0,
     "currency": "USD",
     "dimensions": "80x80 cm",
     "material": "Onyx",
-    "inStock": false
+    "inStock": false,
+    "tags": ["Luxury", "Premium"]
   }
 ]
