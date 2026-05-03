@@ -1,6 +1,4 @@
 import "./globals.css";
-import Navbar from "@/components/shared/Navbar";
-import Footer from "@/components/shared/Footer";
 import { InterFont } from "@/lib/font";
 import { Toaster } from "react-hot-toast";
 
@@ -19,11 +17,9 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col">
         <Toaster position="top-right" />
-        <Navbar></Navbar>
         <main>
           {children}
         </main>
-        <Footer></Footer>
         </body>
 
     </html>

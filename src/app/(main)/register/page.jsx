@@ -4,26 +4,27 @@ import React from "react";
 import googleImg from "@/assets/google.png";
 import Image from "next/image";
 import { NotoSerifFont } from "@/lib/font";
-import Link from "next/link";
-import { authClient } from "@/lib/auth-client";
 import { useForm } from "react-hook-form";
+import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
 import { errorToast, successToast } from "@/lib/toasts";
 
-const LoginPage = () => {
+const RegisterPage = () => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const handleLogin = async (iData) => {
-    const { email, password } = iData;
+  const handleRegister = async (iData) => {
+    const { name, email, photoUrl, password } = iData;
 
-    const { data, error } = await authClient.signIn.email({
+    const { data, error } = await authClient.signUp.email({
+      name: name,
       email: email,
+      image: photoUrl,
       password: password,
-      rememberMe: true,
-      callbackURL: "/",
     });
 
     if (error) {
@@ -32,35 +33,42 @@ const LoginPage = () => {
 
     if (data) {
       successToast("Registration Successfull");
+      router.push("/");
     }
   };
 
-  const handleGoogleLogin = async () => {
+  const handleGoogleRegister = async () => {
     const data = await authClient.signIn.social({
       provider: "google",
-    });
-
-    toast.success("Login Successfull", {
-      style: {
-        borderLeft: "3px solid #536257",
-        padding: "12px 16px",
-        color: "#111827",
-      },
-      iconTheme: {
-        primary: "#536257",
-        secondary: "#fff",
-      },
     });
   };
 
   return (
-    <div className="bg-[#FAF9F8] h-screen flex items-center ">
-      <div className="bg-white shadow rounded-md w-127.75  mx-auto p-10 md:p-15.75">
-        <h3 className={`${NotoSerifFont.className} text-[30px]`}>Login</h3>
-        <p className="text-[#444748] mt-2 text-[13px] md:text-[16px]">
-          Enter your credentials to access your curated collection.
+    <div className="bg-[#FAF9F8] ">
+      <div className="bg-white  shadow rounded-md md:w-127.75  mx-auto p-10 md:p-15.75">
+        <p className="text-14px text-[#536257] text-center mb-4 font-semibold">
+          JOIN OUR STUDIO
         </p>
-        <form onSubmit={handleSubmit(handleLogin)}>
+        <h3 className={`${NotoSerifFont.className} text-center text-[30px]`}>
+          Register
+        </h3>
+        <p className="text-[#444748] text-center mt-2 text-[13px] md:text-[16px]">
+          Create an account to curate your collections.
+        </p>
+        <form onSubmit={handleSubmit(handleRegister)}>
+          <legend className="mt-10">Name</legend>
+          <input
+            type="text"
+            className="w-full border-b border-[#9E9B98]/60 mt-1 p-2 md:p-3.5"
+            placeholder="Enter Your Name"
+            {...register("name", { required: "Required field can't be empty" })}
+          ></input>
+          {errors.name && (
+            <p className="mt-1 text-[12px] text-red-500">
+              {errors.name.message}
+            </p>
+          )}
+
           <legend className="mt-10">Email</legend>
           <input
             type="email"
@@ -76,6 +84,21 @@ const LoginPage = () => {
             </p>
           )}
 
+          <legend className="mt-10">Photo URL</legend>
+          <input
+            type="text"
+            className="w-full border-b border-[#9E9B98]/60 mt-1 p-2 md:p-3.5"
+            placeholder="Enter Photo URL"
+            {...register("photoUrl", {
+              required: "Required field can't be empty",
+            })}
+          ></input>
+          {errors.photoUrl && (
+            <p className="mt-1 text-[12px] text-red-500">
+              {errors.photoUrl.message}
+            </p>
+          )}
+
           <legend className="mt-10">Password</legend>
           <input
             type="password"
@@ -85,21 +108,21 @@ const LoginPage = () => {
               required: "Required field can't be empty",
             })}
           ></input>
-          {errors.password && (
+          {errors.email && (
             <p className="mt-1 text-[12px] text-red-500">
-              {errors.password.message}
+              {errors.email.message}
             </p>
           )}
 
           <button className="btn border-0 rounded-none bg-[#536257] text-white mt-10 w-full py-5">
-            Login
+            Register
           </button>
         </form>
         <div className="divider mt-10 text-[13px] text-[#9E9B98]">
           OR Continue With
         </div>
         <button
-          onClick={handleGoogleLogin}
+          onClick={handleGoogleRegister}
           className="mt-10 flex items-center btn bg-transparent py-5 w-full text-[31A1C1C] border-[#9E9B98]"
         >
           <Image
@@ -108,17 +131,11 @@ const LoginPage = () => {
             width={16}
             src={googleImg}
           ></Image>
-          <p>Login With Google</p>
+          <p>Continue With Google</p>
         </button>
-        <p className="text-[#9E9B98] text-[14px] mt-10 text-center">
-          Dont have an account?{" "}
-          <span className="text-[15px] text-[#1E1E1E] font-semibold">
-            <Link href={"/register"}>Register</Link>
-          </span>
-        </p>
       </div>
     </div>
   );
 };
 
-export default LoginPage;
+export default RegisterPage;
