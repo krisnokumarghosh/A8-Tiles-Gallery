@@ -54,6 +54,20 @@ const TileDetailsPage = async ({ params }) => {
             <p className="font-semibold">{tile.material}</p>
           </div>
         </div>
+        <p className="text-[13px] mt-10 text-[#9E9B98] mb-4 font-semibold">
+          TAGS
+        </p>
+        <div className="flex justify-center lg:justify-start gap-4">
+          {
+            tile.tags.map((tag, ind) => {
+             return(
+               <div key={ind}>
+                <span className={`badge rounded-full p-4 ${ind === 0 ? "bg-[#D6E7D9] text-[#59685D]" : "bg-[#E6E2DF] text-black"}`}>{tag}</span>
+               </div>
+             )
+            })
+          }
+        </div>
         <button className="btn border-0 mt-5 rounded-full bg-[#536257] lg:w-full text-white">
           Request A Sample
         </button>
