@@ -1,6 +1,7 @@
 import { getTiles } from '@/lib/data';
 import React from 'react';
 import TileCard from '../shared/TileCard';
+import TileCardSwiper from '../shared/TileCardSwiper';
 
 const FeaturedTiles = async() => {
 
@@ -9,19 +10,8 @@ const FeaturedTiles = async() => {
     return (
         <div className='w-[95%] mx-auto mb-15 md:mb-25'>
             <h1 className={`text-[26px] text-center md:text-[32px] md:mb-15 font-semibold text-[#1E1E1E]`}>Featured Collections</h1>
-            <div className='grid grid-cols-2 lg:grid-cols-4 justify-items-center'>
-                {
-                    tiles.slice(0, 4).map((tile, ind) => {
-                        return(
-                            <TileCard
-                            key={ind}
-                            tile={tile}
-                            >
-
-                            </TileCard>
-                        )
-                    })
-                }
+            <div className='mb-4'>
+             <TileCardSwiper tiles={tiles} />
             </div>
         </div>
     );
