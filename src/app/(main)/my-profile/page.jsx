@@ -5,6 +5,7 @@ import { NotoSerifFont } from "@/lib/font";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { CgProfile } from "react-icons/cg";
 
 const ProfilePage = () => {
   const { data: session, isPending } = authClient.useSession();
@@ -19,12 +20,16 @@ const ProfilePage = () => {
       ) : (
         <div className="flex flex-col justify-center  items-center p-20">
           <div>
-            <Image
-              alt="user image"
-              height={300}
-              width={300}
-              src={user?.image}
-            ></Image>
+            {user?.image ? (
+              <Image
+                alt="user image"
+                height={300}
+                width={300}
+                src={user?.image}
+              ></Image>
+            ) : (
+              <CgProfile className="text-2xl text-[#78716C]" />
+            )}
           </div>
           <div>
             <h1

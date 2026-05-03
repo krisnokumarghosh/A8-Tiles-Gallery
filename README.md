@@ -6,7 +6,7 @@ A modern tile shop web application where users can explore, search, and view det
 
 ## Live URL
 
-[Visit Tiles Gallery](#) [](https://a8-tiles-gallery.vercel.app/)
+[Visit Tiles Gallery](https://a8-tiles-gallery.vercel.app)
 
 ---
 

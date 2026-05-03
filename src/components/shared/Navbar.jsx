@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import Navlink from "./Navlink";
@@ -7,43 +7,77 @@ import { CgProfile } from "react-icons/cg";
 import { NotoSerifFont } from "@/lib/font";
 import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
+  const router = useRouter();
 
-  const {data: session , isPending} = authClient.useSession();
+  const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
-  
+
+  const handleLogout = async () => {
+    await authClient.signOut();
+    router.push("/");
+  };
 
   return (
-    <div className={`${NotoSerifFont.className} py-6 flex items-center justify-between px-4 md:px-12 bg-[#F9F8F7]`}>
+    <div
+      className={`${NotoSerifFont.className} py-6 flex items-center justify-between px-4 md:px-12 bg-[#F9F8F7]`}
+    >
       <div className="flex md:gap-3 items-center">
-         <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
-      </div>
-      <ul
-        tabIndex="-1"
-        className="menu menu-sm dropdown-content space-y-3 bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-         <li>
-            <Navlink href={"/"} className="text-[#78716C] hover:bg-[#536257] hover:text-white" >
-              Home
-            </Navlink>
-          </li>
-          <li>
-            <Navlink href={"/all-tiles"} className="text-[#78716C] hover:bg-[#536257] hover:text-white" >
-              All Tiles
-            </Navlink>
-          </li>
-          <li>
-            <Navlink className="text-[#78716C] hover:bg-[#536257] hover:text-white" href={"/my-profile"}>
-              My Profile
-            </Navlink>
-          </li>
-      </ul>
-    </div>
-    <Link href={"/"}>
-        <h1 className="text-[#333333] font-bold md:text-[20px]">Tiles Gallery</h1>
-    </Link>
+        <div className="dropdown">
+          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              {" "}
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />{" "}
+            </svg>
+          </div>
+          <ul
+            tabIndex="-1"
+            className="menu menu-sm dropdown-content space-y-3 bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+          >
+            <li>
+              <Navlink
+                href={"/"}
+                className="text-[#78716C] hover:bg-[#536257] hover:text-white"
+              >
+                Home
+              </Navlink>
+            </li>
+            <li>
+              <Navlink
+                href={"/all-tiles"}
+                className="text-[#78716C] hover:bg-[#536257] hover:text-white"
+              >
+                All Tiles
+              </Navlink>
+            </li>
+            <li>
+              <Navlink
+                className="text-[#78716C] hover:bg-[#536257] hover:text-white"
+                href={"/my-profile"}
+              >
+                My Profile
+              </Navlink>
+            </li>
+          </ul>
+        </div>
+        <Link href={"/"}>
+          <h1 className="text-[#333333] font-bold md:text-[20px]">
+            Tiles Gallery
+          </h1>
+        </Link>
       </div>
 
       <div>
@@ -66,29 +100,40 @@ const Navbar = () => {
         </ul>
       </div>
 
-     {
-       isPending? 
-            <span className="loading loading-spinner loading-md md:loading-lg"></span> :
-      user? 
-      ( <div className="flex items-center gap-2 md:gap-5">
-        <Link href={"/my-profile"}>
-        <Image
-        alt="user image"
-        height={35}
-        width={35}
-        src={user?.image || <CgProfile className="text-2xl text-[#78716C]"/>}
-        className="rounded-full"
-        ></Image>
-        </Link>
-        <button 
-         onClick={async() => await authClient.signOut()}
-        className="btn px-5 md:px-7 rounded-full border-0 bg-[#536257] text-white">Logout</button>
-      </div>) : 
-      ( <div className="flex items-center gap-2 md:gap-5">
-        {/* <CgProfile className="text-2xl text-[#78716C]"/> */}
-        <Link href={"/login"}><button className="btn px-5 md:px-7 rounded-full border-0 bg-[#536257] text-white">Login</button></Link>
-      </div>)
-     }
+      {isPending ? (
+        <span className="loading loading-spinner loading-md md:loading-lg"></span>
+      ) : user ? (
+        <div className="flex items-center gap-2 md:gap-5">
+          <Link href={"/my-profile"}>
+            {user?.image ? (
+              <Image
+                alt="user image"
+                height={35}
+                width={35}
+                src={user?.image}
+                className="rounded-full h-8.75 w-8.75 md:w-12 md:h-12"
+              ></Image>
+            ) : (
+              <CgProfile className="text-2xl text-[#78716C]" />
+            )}
+          </Link>
+          <button
+            onClick={handleLogout}
+            className="btn px-5 md:px-7 rounded-full border-0 bg-[#536257] text-white"
+          >
+            Logout
+          </button>
+        </div>
+      ) : (
+        <div className="flex items-center gap-2 md:gap-5">
+          {/* <CgProfile className="text-2xl text-[#78716C]"/> */}
+          <Link href={"/login"}>
+            <button className="btn px-5 md:px-7 rounded-full border-0 bg-[#536257] text-white">
+              Login
+            </button>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };
